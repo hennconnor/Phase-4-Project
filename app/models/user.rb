@@ -9,7 +9,7 @@ class User < ApplicationRecord
         uniqueness: true,
         length: { maximum: 18 }
 
-  def password = (new_password)
+  def password=(new_password)
     salt = BCrypt::Engine::generate_salt
     self.password_digest = Bcrypt::Engine::hash_secret(new_password, salt)
   end
