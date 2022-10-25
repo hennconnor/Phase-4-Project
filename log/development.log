@@ -1,0 +1,35 @@
+Started GET "/" for ::1 at 2022-10-25 08:26:33 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/connorhenn/.rbenv/versions/2.7.6/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/connorhenn/.rbenv/versions/2.7.6/lib/ruby/gems/2.7.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.0ms | Allocations: 611)
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3305)
+
+
+Started GET "/hello" for ::1 at 2022-10-25 08:26:40 -0700
+Processing by ApplicationController#hello_world as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 692)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-10-25 08:26:40 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/hello" for ::1 at 2022-10-25 08:27:15 -0700
+Processing by ApplicationController#hello_world as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 311)
+
+
+Started GET "/hello" for ::1 at 2022-10-25 08:29:26 -0700
+Processing by ApplicationController#hello_world as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 25ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 16142)
+
+
+Started GET "/hello" for ::1 at 2022-10-25 08:59:22 -0700
+Processing by ApplicationController#hello_world as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 1ms (Views: 0.5ms | Allocations: 412)
+
+
