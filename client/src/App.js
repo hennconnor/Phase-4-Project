@@ -37,7 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/restaurants" element={<Restaurants />} />
-        <Route path="/user" element={<User />} />
+        <Route path="/user" element={<User user={currentUser} />} />
         <Route path="/login" element={<Login onLogin={handleLogin} onLogout={handleLogout} user={currentUser} />} />
         <Route path="/signup" element={<Signup user={currentUser} />} />
       </Routes>

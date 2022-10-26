@@ -13,7 +13,7 @@ function Signup({ user }) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ username, password, name }),
+            body: JSON.stringify({ username, password, name, image_url }),
         })
             .then((r) => r.json())
             .then((user) => console.log(user))
