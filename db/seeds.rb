@@ -1,8 +1,8 @@
 puts "creating Users..."
 
-user1 = User.create(username: "username1", password_digest: "abc123", name: "Connor")
-user2 = User.create(username: "username2", password_digest: "abc123", name: "Teejay")
-user3 = User.create(username: "usernam3", password_digest: "abc123", name: "Matt")
+user1 = User.create(username: "username1", password: "abc123", name: "Connor")
+user2 = User.create(username: "username2", password: "abc123", name: "Teejay")
+user3 = User.create(username: "usernam3", password: "abc123", name: "Matt")
 
 puts "creating Restaurants..."
 

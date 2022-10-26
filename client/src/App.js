@@ -9,7 +9,26 @@ import Login from "./Pages/Login"
 
 function App() {
 
-  const [currentUser, setCurrentUser] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    fetch('/me').then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setCurrentUser(user))
+      }
+    });
+  }, []);
+
+
+  function handleLogin(user) {
+    setCurrentUser(user);
+  }
+
+  function handleLogout() {
+    setCurrentUser(null);
+  }
+
+
 
   return (
     <div className="App">
@@ -18,7 +37,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/restaurants" element={<Restaurants />} />
         <Route path="/user" element={<User />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login onLogin={handleLogin} onLogout={handleLogout} user={currentUser} />} />
       </Routes>
     </div>
   );
