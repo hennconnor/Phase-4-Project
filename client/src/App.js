@@ -6,6 +6,7 @@ import Home from "./Pages/Home"
 import User from "./Pages/User"
 import Restaurants from "./Pages/Restaurants"
 import Login from "./Pages/Login"
+import Signup from "./Pages/Signup"
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
         <Route path="/restaurants" element={<Restaurants />} />
         <Route path="/user" element={<User />} />
         <Route path="/login" element={<Login onLogin={handleLogin} onLogout={handleLogout} user={currentUser} />} />
+        <Route path="/signup" element={<Signup user={currentUser} />} />
       </Routes>
     </div>
   );
