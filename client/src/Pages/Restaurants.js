@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RestaurantCard from '../Components/RestaurantCard';
+import { Link } from "react-router-dom";
 
 
 function Restaurants() {

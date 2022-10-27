@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./Components/NavBar"
+import RestaurantDetails from "./Pages/RestaurantDetails"
 import Home from "./Pages/Home"
 import User from "./Pages/User"
 import Restaurants from "./Pages/Restaurants"
@@ -40,6 +41,7 @@ function App() {
         <Route path="/user" element={<User user={currentUser} />} />
         <Route path="/login" element={<Login onLogin={handleLogin} onLogout={handleLogout} user={currentUser} />} />
         <Route path="/signup" element={<Signup user={currentUser} />} />
+        <Route path="/restaurants/:id" element={<RestaurantDetails />} />
       </Routes>
     </div>
   );
