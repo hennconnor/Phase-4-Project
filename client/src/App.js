@@ -41,7 +41,7 @@ function App() {
         <Route path="/user" element={<User user={currentUser} />} />
         <Route path="/login" element={<Login onLogin={handleLogin} onLogout={handleLogout} user={currentUser} />} />
         <Route path="/signup" element={<Signup user={currentUser} />} />
-        <Route path="/restaurants/:id" element={<RestaurantDetails />} />
+        <Route path="/restaurants/:id" element={<RestaurantDetails user={currentUser} />} />
       </Routes>
     </div>
   );
