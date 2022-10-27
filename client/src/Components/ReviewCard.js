@@ -8,6 +8,13 @@ function ReviewCard({ review, user, handleDelete }) {
                 <p>Comment: {review.comment}</p>
                 {(user.id) === (review.user.id) ? <button>Update Review</button> : ''}
                 {(user.id) === (review.user.id) ? <button onClick={handleDelete}>Delete Review</button> : ''}
+                {(user && (user.id) !== (review.user.id)) ?
+
+                    <form>
+                        <input></input>
+                        <input></input>
+                        <button>Submit Review</button>
+                    </form> : ''}
             </div>
         )
     }
