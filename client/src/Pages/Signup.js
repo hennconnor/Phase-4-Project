@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Signup({ user }) {
+function Signup({ user, setUser }) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [name, setName] = useState('')
@@ -16,7 +16,7 @@ function Signup({ user }) {
             body: JSON.stringify({ username, password, name, image_url }),
         })
             .then((r) => r.json())
-            .then((user) => console.log(user))
+            .then((user) => setUser(user))
     }
 
 
@@ -24,7 +24,7 @@ function Signup({ user }) {
         <div>
             {user ? (
                 <div>
-                    <p>You Already have an account</p>
+                    <p>You are logged in as {user.name}</p>
                 </div>
             )
                 : (
