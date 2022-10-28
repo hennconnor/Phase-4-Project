@@ -83,21 +83,21 @@ function RestaurantDetails({ user }) {
             {restaurant.image_url ? <img src={`${restaurant.image_url}`} width="400" height="400" /> : <img src="https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg" width="400" height="400" />}
             <p>{restaurant.description}</p>
             <h3>Reviews</h3>
+            {user ?
+                <form onSubmit={handleNewSubmit}>
+                    <label>Comments:</label>
+                    <input type="text" name="comment" value={newReview.comment} placeholder="Leave Comments" onChange={handleNewChange} ></input>
+                    <label>Rating:</label>
+                    <select name='rating' value={newReview.rating} onChange={handleNewChange}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
 
-            <form onSubmit={handleNewSubmit}>
-                <label>Comments:</label>
-                <input type="text" name="comment" value={newReview.comment} placeholder="Leave Comments" onChange={handleNewChange} ></input>
-                <label>Rating:</label>
-                <select name='rating' value={newReview.rating} onChange={handleNewChange}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-
-                <button>Create Review</button>
-            </form>
+                    <button>Create Review</button>
+                </form> : ''}
 
             {reviews ? reviews.map((review) => <ReviewCard key={review.id} review={review} user={user} restaurant={restaurant} onDelete={onDelete} addReview={addReview} onUpdate={onUpdate} />) : ''}
         </div>
