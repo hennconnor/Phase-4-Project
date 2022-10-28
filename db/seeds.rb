@@ -15,3 +15,4 @@ puts "creating Reviews..."
 review1 =  Review.create(comment: "fire", rating: 5, user_id: 1, restaurant_id: 3)
 review2 =  Review.create(comment: "trash", rating: 1, user_id: 2, restaurant_id: 2)
 review3 =  Review.create(comment: "average", rating: 3, user_id: 3, restaurant_id: 1)
+review4 = Review.create(comment: "nice ambience", rating: 4, user_id: 3, restaurant_id: 3)
