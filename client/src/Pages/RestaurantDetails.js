@@ -84,7 +84,7 @@ function RestaurantDetails({ user }) {
             <p>{restaurant.description}</p>
             <h3>Reviews</h3>
             {user ?
-                <form onSubmit={handleNewSubmit}>
+                <form id="my_form" onSubmit={handleNewSubmit}>
                     <label>Comments:</label>
                     <input type="text" name="comment" value={newReview.comment} placeholder="Leave Comments" onChange={handleNewChange} ></input>
                     <label>Rating:</label>

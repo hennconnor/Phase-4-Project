@@ -8,6 +8,7 @@ class User < ApplicationRecord
         presence: true, 
         uniqueness: true,
         length: { maximum: 18 }
+  validates :name, presence: true
   
   
 end
