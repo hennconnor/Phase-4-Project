@@ -1,0 +1,21 @@
+@import "~bootstrap/scss/bootstrap";
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+
+.user-nav, .user-nae {
+ margin-right: 500px;
+}
+
+.cards {
+  display: flex;
+    justify-content: space-between;
+}
