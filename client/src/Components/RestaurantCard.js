@@ -1,16 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import {
+  MDBCard,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardBody,
+  MDBCardImage,
+  MDBCardFooter,
+  MDBCardGroup,
+  MDBRow,
+  MDBCol
+} from 'mdb-react-ui-kit';
+
 
 function RestaurantCard({ restaurant }) {
 
 
 
     return (
-        <div>
-            <Link to={`/restaurants/${restaurant.id}`}>
-                <h1>{restaurant.name}</h1>
-                {restaurant.image_url ? <img src={`${restaurant.image_url}`} width="400" height="400" /> : <img src="https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg" width="400" height="400" />}
-            </Link>
+        <div className="carder">
+            
+
+                <MDBCardGroup>
+            <MDBCol sm='4'>
+                    <MDBCard className='align-items-center' shadow='0' border='dark' background='secondary'>
+        <Link className="link" to={`/restaurants/${restaurant.id}`}>
+        <MDBCardImage src={restaurant.image_url} alt='...' position='top' />
+     <MDBCardBody>
+          <MDBCardTitle>{restaurant.name}</MDBCardTitle>
+          <MDBCardText>
+            This is a wider card with supporting text below as a natural lead-in to additional content. This
+            content is a little bit longer.
+          </MDBCardText>
+                        </MDBCardBody>
+                        </Link>
+             </MDBCard>
+        </MDBCol>
+        </MDBCardGroup>
+            
         </div>
 
     )

@@ -16,7 +16,7 @@ function NavBar({ user, onLogout, onLogin }) {
         <>
       <Navbar bg="dark" variant="dark">
         <Container>
-           <Navbar.Brand href="/">FOODIE</Navbar.Brand>
+           <Navbar.Brand className="foodie" href="/">FOODIE</Navbar.Brand>
            <Nav className="me-auto">
            <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/restaurants">Restaurants</Nav.Link>

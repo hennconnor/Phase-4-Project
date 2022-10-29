@@ -1,4 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import Restaurant from './Restaurants'
+import pasta from '../assets/pasta.jpg'
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBRow,
+  MDBCol,
+  MDBInput,
+  MDBCheckbox
+}
+from 'mdb-react-ui-kit';
 
 function Login({ user, onLogin, onLogout }) {
 
@@ -36,30 +50,40 @@ function Login({ user, onLogin, onLogout }) {
                 </div>
             )
                 : (
-                    <div>
+                    <>
                         <form onSubmit={handleSubmit}>
-                            <label type="text" >username:</label>
-                            <input
-                                type="text"
-                                id="username"
-                                autoComplete="off"
-                                placeholder="Type Username"
-                                onChange={(e) => setUsername(e.target.value)}
-                                value={username}
-                            ></input>
-                            <label type="text" >password:</label>
-                            <input
-                                type="password"
-                                placeholder="Type Password"
-                                onChange={(e) => setPassword(e.target.value)}
-                                value={password}
-                                autoComplete="current-password"
-                            ></input>
+                           <MDBContainer className='my-5'>
+      <MDBCard>
 
-                            <button type="submit" >Login</button>
+        <MDBRow className='g-0 d-flex align-items-center'>
 
+          <MDBCol md='4'>
+            <MDBCardImage src={pasta} alt='phone' className='rounded-t-5 rounded-tr-lg-0' fluid />
+          </MDBCol>
+
+          <MDBCol md='8'>
+
+            <MDBCardBody>
+
+                <MDBInput onChange={(e) => setUsername(e.target.value)}
+                                value={username} wrapperClass='mb-4' label='username' id='form1'/>
+                <MDBInput  onChange={(e) => setPassword(e.target.value)}
+                                value={password} wrapperClass='mb-4' label='Password' id='form2' type='password'/>
+
+              <div className="d-flex justify-content-between mx-4 mb-4"></div>
+
+              <MDBBtn className="mb-4 w-100" onClick={handleSubmit}>Sign in</MDBBtn>
+
+            </MDBCardBody>
+
+          </MDBCol>
+
+        </MDBRow>
+
+      </MDBCard>
+    </MDBContainer>
                         </form>
-                    </div>)
+                    </>)
             }</div>
     )
 }

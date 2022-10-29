@@ -1,4 +1,16 @@
 import React, { useState } from 'react'
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBInput,
+  MDBIcon,
+  MDBRow,
+  MDBCol,
+  MDBCheckbox
+}
+from 'mdb-react-ui-kit'
 
 function Signup({ user, setUser }) {
     const [username, setUsername] = useState('')
@@ -16,7 +28,7 @@ function Signup({ user, setUser }) {
             body: JSON.stringify({ username, password, name, image_url }),
         })
             .then((r) => r.json())
-            .then((user) => setUser(user))
+            .then((newUser) => setUser(newUser))
     }
 
 
@@ -30,45 +42,46 @@ function Signup({ user, setUser }) {
                 : (
                     <div>
                         <form onSubmit={handleSubmit}>
-                            <label type="text" >username:</label>
-                            <input
-                                type="text"
-                                id="username"
-                                autoComplete="off"
-                                placeholder="Type Username"
-                                onChange={(e) => setUsername(e.target.value)}
-                                value={username}
-                            ></input>
-                            <label type="text" >password:</label>
-                            <input
-                                type="password"
-                                placeholder="Type Password"
-                                onChange={(e) => setPassword(e.target.value)}
-                                value={password}
-                                autoComplete="current-password"
-                            ></input>
+                            <MDBContainer fluid className='my-5'>
 
-                            <label type="text" >name:</label>
-                            <input
-                                type="text"
-                                placeholder="Type Name"
-                                onChange={(e) => setName(e.target.value)}
-                                value={name}
-                                autoComplete="off"
-                            ></input>
+      <MDBRow className='g-0 align-items-center'>
+        <MDBCol col='6'>
 
-                            <label type="text" >image url:</label>
-                            <input
-                                type="text"
-                                placeholder="Type Image URL"
-                                onChange={(e) => setImage(e.target.value)}
-                                value={image_url}
-                                autoComplete="off"
-                            ></input>
+          <MDBCard className='my-5 cascading-right' style={{background: 'hsla(0, 0%, 100%, 0.55)',  backdropFilter: 'blur(30px)'}}>
+            <MDBCardBody className='p-5 shadow-5 text-center'>
+
+              <h2 className="fw-bold mb-5">Sign up now</h2>
+
+              <MDBRow>
+                <MDBCol col='6'>
+                  <MDBInput  onChange={(e) => setName(e.target.value)}
+                                value={name} wrapperClass='mb-4' label='name' id='form1' type='text'/>
+                </MDBCol>
+              </MDBRow>
+
+              <MDBInput onChange={(e) => setUsername(e.target.value)}
+                                value={username} wrapperClass='mb-4' label='username' id='form3'/>
+              <MDBInput onChange={(e) => setPassword(e.target.value)}
+                                                    value={password} wrapperClass='mb-4' label='Password' id='form4' type='password' />
+             <MDBInput onChange={(e) => setImage(e.target.value)}
+                                value={image_url} wrapperClass='mb-4' label='Profile Picture URL' id='form4' type='text'/>
+
+              
+
+              <MDBBtn type="submit" className='w-100 mb-4' size='md'>sign up</MDBBtn>
+
+              <div className="text-center">
 
 
-                            <button type="submit" >Create Account</button>
+              </div>
 
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+
+      </MDBRow>
+
+    </MDBContainer>
                         </form>
                     </div>)
             }</div>
