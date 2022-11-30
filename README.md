@@ -1,24 +1,22 @@
-# README
+# FOODIE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/103458131/204690179-27ab0096-aad6-4917-b1fe-f2faebe8c9e8.gif)
 
-Things you may want to cover:
 
-* Ruby version
+## Introduction
+Foodie is an application where you can discover your favorite spots to eat and review/comment
 
-* System dependencies
+## Functionality
 
-* Configuration
+- Click User in Navbar to login or create account
+- Click on restaurant to view details
+- (If logged in) Click comment to leave review and rating 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Run Build 
+- Fork & Clone
+- run bundle install 
+- cd into client folder
+- run npm install
+- cd .. back into root folder
+- run   rails s 
+- open separate terminal and run   npm start -prefix client 
