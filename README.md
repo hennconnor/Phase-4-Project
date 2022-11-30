@@ -14,9 +14,9 @@ Foodie is an application where you can discover your favorite spots to eat and r
 
 ## Run Build 
 - Fork & Clone
-- run bundle install 
-- cd into client folder
-- run npm install
-- cd .. back into root folder
-- run   rails s 
-- open separate terminal and run   npm start -prefix client 
+- run ```bundle install``` 
+- ```cd``` into client folder
+- run ```npm install```
+- ```cd ..``` back into root folder
+- run ```rails s``` 
+- open separate terminal and run ```npm start -prefix client``` 
